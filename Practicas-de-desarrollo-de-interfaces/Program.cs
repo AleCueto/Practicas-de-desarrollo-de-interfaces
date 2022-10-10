@@ -17,6 +17,7 @@ namespace Practicas_de_desarrollo_de_interfaces
             radio = Convert.ToInt32(Console.ReadLine());
 
 
+
             area = Math.PI * Math.Pow(radio, 2);
 
             Console.WriteLine($"El área del círculo del radio {radio} es {area} metros cuadrados");
