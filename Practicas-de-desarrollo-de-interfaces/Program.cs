@@ -35,7 +35,7 @@ namespace Practicas_de_desarrollo_de_interfaces
 
         #endregion
 
-
+        #region Practica 2
         static void Practica2()
         {
             string respuesta;
@@ -68,7 +68,7 @@ namespace Practicas_de_desarrollo_de_interfaces
 
 
         }
-
+        #endregion
 
     }
 }
