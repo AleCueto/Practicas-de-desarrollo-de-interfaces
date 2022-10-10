@@ -10,6 +10,16 @@ namespace Practicas_de_desarrollo_de_interfaces
     {
         static void Main(string[] args)
         {
+
+            //Practica1();
+
+            Practica2();
+        }
+
+        #region Pactica 1
+
+        static void Practica1()
+        {
             double radio;
             double area;
 
@@ -21,7 +31,44 @@ namespace Practicas_de_desarrollo_de_interfaces
             area = Math.PI * Math.Pow(radio, 2);
 
             Console.WriteLine($"El área del círculo del radio {radio} es {area} metros cuadrados");
+        }
+
+        #endregion
+
+
+        static void Practica2()
+        {
+            string respuesta;
+            int edad;
+
+            const string TIENE_CARNET = "S";
+            const int EDAD_MINIMA_CARNET_CONDUCIR = 18;
+
+            Console.Write("¿Qué edad tienes?: ");
+            edad = Convert.ToInt32(Console.ReadLine());
+
+            if(edad >= EDAD_MINIMA_CARNET_CONDUCIR)
+            {
+                Console.Write("¿Tienes carnet de conducir?: ");
+                respuesta = Console.ReadLine().ToUpper();
+
+                if (respuesta.Equals(TIENE_CARNET))
+                {
+                    Console.WriteLine("Felicidades, puedes conducir");
+                }
+                else
+                {
+                    Console.WriteLine("Lo siento, no puedes conducir");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Lo siento, no puedes conducir");
+            }
+
 
         }
+
+
     }
 }
