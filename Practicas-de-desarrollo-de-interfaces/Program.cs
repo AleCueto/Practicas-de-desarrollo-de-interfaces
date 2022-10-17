@@ -15,7 +15,9 @@ namespace Practicas_de_desarrollo_de_interfaces
 
             //Practica2();
 
-            Practica3();
+            //Practica3();
+
+            Practica4();
         }
 
         #region Pactica 1
@@ -90,6 +92,33 @@ namespace Practicas_de_desarrollo_de_interfaces
                 Console.Write("El valor no es correcto, debe ser una S o una N: ");
                 respuesta = Console.ReadLine();
             }
+
+            return respuesta;
+
+        }
+
+
+        static void Practica4()
+        {
+
+            Console.WriteLine("¿Quieres entrar? S/N");
+
+            Console.Write("respuesta: ");
+            string respuesta2 = LeerRespuesta2(Console.ReadLine());
+            Console.WriteLine("Bien, has introducido S o N"); ;
+        }
+
+        static string LeerRespuesta2(string respuesta)
+        {
+
+            do
+            {
+                if (respuesta != "S" && respuesta != "N")
+                {
+                    Console.Write("El valor no es correcto, debe ser una S o una N: ");
+                    respuesta = Console.ReadLine();
+                }
+            } while (respuesta != "S" && respuesta != "N");
 
             return respuesta;
 
