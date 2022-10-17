@@ -17,8 +17,13 @@ namespace Practicas_de_desarrollo_de_interfaces
 
             //Practica3();
 
-            Practica4();
+            //Practica4();
+
+            Practica5();
+            
+            //Excepciones();
         }
+
 
         #region Pactica 1
 
@@ -51,7 +56,7 @@ namespace Practicas_de_desarrollo_de_interfaces
             Console.Write("¿Qué edad tienes?: ");
             edad = Convert.ToInt32(Console.ReadLine());
 
-            if(edad >= EDAD_MINIMA_CARNET_CONDUCIR)
+            if (edad >= EDAD_MINIMA_CARNET_CONDUCIR)
             {
                 Console.Write("¿Tienes carnet de conducir?: ");
                 respuesta = Console.ReadLine().ToUpper();
@@ -76,7 +81,7 @@ namespace Practicas_de_desarrollo_de_interfaces
 
 
         static void Practica3() {
-        
+
             Console.WriteLine("¿Quieres entrar? S/N");
 
             Console.Write("respuesta: ");
@@ -87,7 +92,7 @@ namespace Practicas_de_desarrollo_de_interfaces
         static string LeerRespuesta(string respuesta)
         {
 
-            while(respuesta != "S" && respuesta != "N") {
+            while (respuesta != "S" && respuesta != "N") {
 
                 Console.Write("El valor no es correcto, debe ser una S o una N: ");
                 respuesta = Console.ReadLine();
@@ -125,5 +130,65 @@ namespace Practicas_de_desarrollo_de_interfaces
         }
 
 
+        static void Excepciones()
+        {
+            try {
+                Console.WriteLine("Introduce un número:");
+                int valor = int.Parse(Console.ReadLine());
+                Console.WriteLine($"Se ha leido {valor}");
+            }
+            catch (FormatException ex) {
+                Console.WriteLine("El formato del número no es correcto");
+            }
+            catch (OverflowException ex) {
+                Console.WriteLine("El número introducido es demasiado grande");
+            }
+        }
+
+
+        static void Excepciones2()
+        {
+            try
+            {
+                Console.WriteLine("Introduce un número:");
+                int valor = int.Parse(Console.ReadLine());
+                Console.WriteLine($"Se ha leido {valor}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        static void Practica5(){
+
+            const string PATH = @"C:\Users\Estudios\Desktop\Nuevo.txt";
+
+            System.IO.StreamReader archivo = null;
+            string linea = string.Empty;
+
+            try {
+                archivo = new System.IO.StreamReader(PATH);
+                linea = archivo.ReadLine();
+                while(!String.IsNullOrEmpty(linea))
+                {
+                    Console.WriteLine(linea);
+                    linea = archivo.ReadLine();
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                if(archivo != null) 
+                {
+                    archivo.Close();
+                }
+
+                Console.WriteLine("Conexión con el fichero cerrada");
+            }
+        }
     }
 }
